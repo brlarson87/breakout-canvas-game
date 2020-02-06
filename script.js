@@ -16,7 +16,9 @@ let colorsArray = [
   "#b86d29",
   "#e623ac",
   "#3c092d",
-  "#ad0035"
+  "#ad0035",
+  "#78b92e",
+  "#cfb53b"
 ];
 
 let mainTheme = colorsArray[0];
@@ -123,8 +125,8 @@ const moveBall = () => {
   // Wall collision
   if (ball.x + ball.size > canvas.width || ball.x - ball.size < 0) {
     ball.dx *= -1;
-  } else if (ball.y + ball.size > canvas.height || ball.y - ball.size <= 0) {
-    ball.dy *= -1;
+  } else if (ball.y + ball.size > canvas.height || ball.y - ball.size < 0) {
+    ball.dy = Math.abs(ball.dy);
   }
 
   // Paddle collision
@@ -260,7 +262,7 @@ const update = () => {
 
 update();
 
-// Keydown event
+// Keydown events
 
 function keyDown(e) {
   if (e.key === "Right" || e.key === "ArrowRight") {
