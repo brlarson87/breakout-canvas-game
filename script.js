@@ -180,6 +180,7 @@ const changeDifficulty = () => {
 
     ball.dy = -4;
     ball.speed = 4;
+    scoreLevelBreakPoint = 45;
   } else {
     paddle.w -= 5;
     scoreLevelBreakPoint = scoreLevelBreakPoint + 45 * level;
